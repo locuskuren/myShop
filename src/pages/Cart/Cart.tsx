@@ -155,6 +155,7 @@ const Cart: React.FC = () => {
               disabled={
                 token === undefined || cart?.totalPrice === 0 || KEY === ''
               }
+              onClick={() => setShowMessage(true)}
             >
               Check out
             </button>
