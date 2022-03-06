@@ -1,18 +1,18 @@
-# myShop eccomerce platform
+# myShop eCommerce platform
 
 ![image](https://user-images.githubusercontent.com/94398533/156904037-be6ddf31-8235-4814-ae94-0b513b003771.png)
 
 ## Built with:
 
 Typescript
--React
--Redux
--Stripe
+- React
+- Redux
+- Stripe
 
 ## Brief Description:
 
-Simple ecommerce platform on which you can:
- -authenticate
-  -browse through different products and add them to cart
-  -check out your cart and then view order list on profile page
+Simple eCommerce platform on which you can:
+ - authenticate
+  - browse through different products and add them to the cart
+  - check out your cart and then view the order list on the profile page
 
