@@ -58,6 +58,7 @@ const Cart: React.FC = () => {
             headers: header,
           });
 
+          setShowMessage(true);
           cartClearItems();
           setStripeToken('');
         } catch (err) {
@@ -155,7 +156,6 @@ const Cart: React.FC = () => {
               disabled={
                 token === undefined || cart?.totalPrice === 0 || KEY === ''
               }
-              onClick={() => setShowMessage(true)}
             >
               Check out
             </button>
