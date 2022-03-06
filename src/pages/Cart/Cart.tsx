@@ -105,7 +105,7 @@ const Cart: React.FC = () => {
                   />
                 </div>
                 <span className="item-price">
-                  ${item.price * item.quantity}
+                  ${Math.round(item.price * item.quantity * 100) / 100}
                 </span>
                 <span
                   onClick={() => cartRemoveItem(item)}
@@ -128,7 +128,7 @@ const Cart: React.FC = () => {
               <span>Shipping</span>
             </div>
             <div className="right">
-              <span>${cart.totalPrice}</span>
+              <span>${Math.round(cart.totalPrice * 100) / 100}</span>
               <span>$7.99</span>
             </div>
           </div>
