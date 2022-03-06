@@ -137,7 +137,7 @@ const Cart: React.FC = () => {
               <span>Total</span>
             </span>
             <span className="right">
-              <span>${cart.totalPrice + 7.99}</span>
+              <span>${Math.round((cart.totalPrice + 7.99) * 100) / 100}</span>
             </span>
           </div>
           <StripeCheckout
