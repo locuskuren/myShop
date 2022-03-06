@@ -1,0 +1,46 @@
+@import '../../exports.scss';
+
+.search-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $peach-color;
+  z-index: 1000;
+  @include flexCenter;
+
+  span {
+    font-size: 2rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  div {
+    @include flexCenter;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+
+    input {
+      border: 0;
+      background-color: $peach-color;
+      font-size: 1.5rem;
+      color: white;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    .icon {
+      font-size: 3rem;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../exports.scss';
+
+.product {
+  margin: 60px 50px 30px 50px;
+  @include flexCenter;
+  flex-direction: column;
+
+  .image-container {
+    background-color: white;
+    @include flexCenter;
+    height: 60vh;
+
+    img {
+      max-width: 23vw;
+      max-height: 55vh;
+
+      @media screen and (max-width: 1100px) {
+        max-width: 40vw;
+      }
+
+      @media screen and (max-width: 900px) {
+        max-width: 60vw;
+      }
+
+      @media screen and (max-width: 500px) {
+        max-width: 80vw;
+      }
+    }
+  }
+
+  .product-name {
+    margin-top: 15px;
+    height: 10vh;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .product-price {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+}

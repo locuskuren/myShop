@@ -1,0 +1,62 @@
+@import '../../exports.scss';
+
+.auth {
+  flex: 1;
+  background-color: $peach-color;
+
+  .form-wrapper {
+    @include flexCenter;
+    flex-direction: column;
+    padding-top: 100px;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 100px;
+    }
+
+    form {
+      @include flexCenter;
+      flex-direction: column;
+      margin-bottom: 50px;
+
+      input {
+        background-color: $peach-color;
+        border: none;
+        border-bottom: 1px solid white;
+        width: 360px;
+        height: 50px;
+        font-size: 1.5rem;
+        color: white;
+        margin: 20px;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: white;
+        }
+      }
+
+      button {
+        width: 360px;
+        height: 45px;
+        border: none;
+        background-color: white;
+        color: $peach-color;
+        margin-top: 20px;
+        cursor: pointer;
+
+        &:disabled {
+          background-color: grey;
+          color: white;
+        }
+      }
+    }
+
+    .link {
+      font-size: 1.3rem;
+      font-weight: 300;
+    }
+  }
+}

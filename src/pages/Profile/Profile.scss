@@ -1,0 +1,84 @@
+@import '../../exports.scss';
+
+$table-border: 0.5px solid lightgrey;
+
+.profile {
+  background-color: $peach-color;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 120px;
+  flex: 1;
+
+  .top {
+    text-align: center;
+
+    h1 {
+      font-size: 2.7rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    span {
+      font-size: 1.4rem;
+      font-weight: 300;
+      cursor: pointer;
+      border-bottom: 2px solid lightgray;
+      padding-bottom: 3px;
+    }
+
+    span:hover {
+      border-bottom: 2px solid white;
+    }
+  }
+
+  .bottom {
+    margin-top: 40px;
+    @include flexCenter;
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    span {
+      font-weight: 300;
+      font-size: 1.1rem;
+    }
+
+    table {
+      font-weight: normal;
+      border: none;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 100%;
+      white-space: nowrap;
+      @media screen and (max-width: 430px) {
+        font-size: 0.8rem;
+      }
+
+      thead {
+        border: $table-border;
+
+        th {
+          border: $table-border;
+          text-align: center;
+          padding: 8px;
+        }
+      }
+
+      tbody {
+        tr {
+          border: $table-border;
+          td {
+            border: $table-border;
+            text-align: center;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}

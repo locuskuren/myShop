@@ -1,0 +1,85 @@
+@import './../../exports.scss';
+
+.homepage {
+  .promo {
+    background: url('../../../public/homepage-promo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    .content {
+      position: absolute;
+      bottom: 10vh;
+      left: 10vw;
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-weight: 600;
+        font-size: 2rem;
+      }
+
+      a {
+        background-color: white;
+        color: black;
+        border: none;
+        width: 130px;
+        height: 36px;
+        margin-top: 30px;
+        font-size: 1rem;
+        font-weight: 200;
+        text-align: center;
+        @include flexCenter;
+      }
+    }
+  }
+
+  .about {
+    @include flexCenter;
+    height: 30vh;
+
+    p {
+      color: black;
+      font-style: italic;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+
+  .product-list-container {
+    #menscover {
+      background: url('../../../public/menswear.jpg');
+    }
+
+    #womenscover {
+      background: url('../../../public/womenswear.jpg');
+    }
+
+    #jewelerycover {
+      background: url('../../../public/jewelry.jpg');
+    }
+
+    #electronicscover {
+      background: url('../../../public/electronics.jpg');
+    }
+
+    .gap-image {
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+      height: 70vh !important;
+
+      span {
+        position: relative;
+        top: 100px;
+        left: 40px;
+        font-size: 2rem;
+        font-weight: 900;
+        color: black;
+        -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+      }
+    }
+  }
+}
