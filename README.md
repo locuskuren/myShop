@@ -14,5 +14,5 @@ Typescript
 Simple eCommerce platform on which you can:
  - authenticate
   - browse through different products and add them to the cart
-  - check out your cart and then view the order list on the profile page
+  - check out your and pay with stripe test card and then view the order list on the profile page
 
