@@ -35,6 +35,10 @@ const Cart: React.FC = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (cart.totalPrice > 0 && userId && stripeToken !== '') {
       const request = async () => {
         try {

@@ -19,6 +19,10 @@ const ProductPage: React.FC = () => {
   let { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     return () => {
       singleProductReset();
     };
