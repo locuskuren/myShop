@@ -14,7 +14,12 @@ interface ProductsFetchFail {
   type: ProductsActionTypes.PRODUCTS_FETCH_FAIL;
 }
 
+interface ProductsReset {
+  type: ProductsActionTypes.PRODUCTS_RESET;
+}
+
 export type ProductsActionsInterface =
   | ProductsFetchRequest
   | ProductsFetchSuccess
-  | ProductsFetchFail;
+  | ProductsFetchFail
+  | ProductsReset;

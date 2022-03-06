@@ -35,6 +35,8 @@ export const productsReducer: Reducer<ProductsState, ProductsActionsInterface> =
           state.loading = false;
           state.error = true;
           return state;
+        case ProductsActionTypes.PRODUCTS_RESET:
+          return initialState;
         default:
           return state;
       }

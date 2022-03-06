@@ -12,12 +12,16 @@ type Props = {
 };
 
 const ProductsList: React.FC<Props> = ({ category }) => {
-  const { fetchProducts } = useActions();
+  const { fetchProducts, productsReset } = useActions();
   const { products, loading, error } = useSelector((state) => state.products);
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
+
+    return () => {
+      productsReset();
+    };
+  }, [fetchProducts, productsReset]);
 
   return (
     <div className="product-list" id={`${category}`}>

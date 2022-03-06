@@ -22,3 +22,7 @@ export const fetchProducts = () => {
     }
   };
 };
+
+export const productsReset = (): ProductsActionsInterface => {
+  return { type: ProductsActionTypes.PRODUCTS_RESET };
+};

@@ -89,12 +89,13 @@
     .cart-add-notification {
       @include flexCenter;
       height: 50px;
-      width: 420px;
+      max-width: 415px;
       background-color: white;
       color: red;
       border: 2px solid red;
       font-size: 1.2rem;
       font-weight: 300;
+      text-align: center;
     }
   }
 }
