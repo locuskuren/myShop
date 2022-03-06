@@ -5,14 +5,14 @@
 ## Built with:
 
 Typescript
-React
-Redux
-Stripe
+-React
+-Redux
+-Stripe
 
 ## Brief Description:
 
 Simple ecommerce platform on which you can:
-  authenticate
-  browse through different products and add them to cart
-  check out your cart and then view order list on profile page
+ -authenticate
+  -browse through different products and add them to cart
+  -check out your cart and then view order list on profile page
 
