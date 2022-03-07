@@ -23,7 +23,7 @@ export const userLogin = (username: string, password: string) => {
   };
 };
 
-export const userLoginErrorReset = (): UserActionsInterfaces => {
+export const userLoginReset = (): UserActionsInterfaces => {
   return { type: UserActionTypes.USER_LOGIN_RESET };
 };
 
