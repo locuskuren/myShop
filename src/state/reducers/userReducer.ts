@@ -22,7 +22,7 @@ export const userReducer: Reducer<UserState, UserActionsInterfaces> = produce(
     switch (action.type) {
       case UserActionTypes.USER_LOGIN_REQUEST:
         state.loading = true;
-        state.error = false;
+        state.error = '';
         return state;
       case UserActionTypes.USER_LOGIN_SUCCESS:
         state.loading = false;
