@@ -15,8 +15,8 @@ interface UserLoginFail {
   payload: string;
 }
 
-interface UserLoginErrorReset {
-  type: UserActionTypes.USER_LOGIN_ERROR_RESET;
+interface UserLoginReset {
+  type: UserActionTypes.USER_LOGIN_RESET;
 }
 
 interface UserLogout {
@@ -50,4 +50,4 @@ export type UserActionsInterfaces =
   | UserRegisterSucess
   | UserRegisterFail
   | UserRegisterReset
-  | UserLoginErrorReset;
+  | UserLoginReset;
