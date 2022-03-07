@@ -8,14 +8,14 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const { loading, error, currentUser } = useSelector((state) => state.user);
-  const { userLogin, userLoginErrorReset } = useActions();
+  const { userLogin, userLoginReset } = useActions();
   let navigate = useNavigate();
 
   useEffect(() => {
     return () => {
-      userLoginErrorReset();
+      userLoginReset();
     };
-  }, [userLoginErrorReset]);
+  }, [userLoginReset]);
 
   useEffect(() => {
     if (currentUser) {
