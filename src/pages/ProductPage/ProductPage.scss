@@ -77,13 +77,16 @@
       font-size: 1.2rem;
       font-weight: 300;
       margin-top: 10px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: grey;
+        cursor: default;
+      }
 
       @media screen and (max-width: 450px) {
         max-width: 90vw;
       }
-    }
-    .disabled {
-      background-color: grey;
     }
 
     .cart-add-notification {

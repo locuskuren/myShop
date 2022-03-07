@@ -94,11 +94,7 @@ const ProductPage: React.FC = () => {
                 />
               </div>
 
-              <button
-                className={!product.inStock ? 'disabled' : ''}
-                disabled={!product.inStock}
-                onClick={handleClick}
-              >
+              <button disabled={!product.inStock} onClick={handleClick}>
                 Add To Cart
               </button>
               {cartNotification && (
