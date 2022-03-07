@@ -26,6 +26,7 @@ export const productsReducer: Reducer<ProductsState, ProductsActionsInterface> =
       switch (action.type) {
         case ProductsActionTypes.PRODUCTS_FETCH_REQUEST:
           state.loading = true;
+          state.error = false;
           return state;
         case ProductsActionTypes.PRODUCTS_FETCH_SUCCESS:
           state.loading = false;

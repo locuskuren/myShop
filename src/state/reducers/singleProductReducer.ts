@@ -28,6 +28,7 @@ export const singleProductReducer: Reducer<
     switch (action.type) {
       case SingleProductActionTypes.SINGLE_PRODUCT_FETCH_REQUEST:
         state.loading = true;
+        state.error = false;
         return state;
       case SingleProductActionTypes.SINGLE_PRODUCT_FETCH_SUCESS:
         state.loading = false;

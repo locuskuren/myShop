@@ -26,6 +26,7 @@ export const ordersReducer: Reducer<OrdersState, OrderActionsInterface> =
       switch (action.type) {
         case OrderActionTypes.ORDERS_FETCH_REQUEST:
           state.loading = true;
+          state.error = false;
           return state;
         case OrderActionTypes.ORDERS_FETCH_SUCCESS:
           state.loading = false;
