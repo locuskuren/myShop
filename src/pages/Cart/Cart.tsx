@@ -155,15 +155,7 @@ const Cart: React.FC = () => {
             token={onToken}
             stripeKey={KEY}
           >
-            <button
-              className="checkout-button"
-              disabled={
-                token === undefined ||
-                cart?.totalPrice === 0 ||
-                KEY === '' ||
-                !userId
-              }
-            >
+            <button className="checkout-button" disabled={!userId}>
               Check out
             </button>
             <h2 className="card-details">
