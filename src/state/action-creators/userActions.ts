@@ -24,7 +24,7 @@ export const userLogin = (username: string, password: string) => {
 };
 
 export const userLoginErrorReset = (): UserActionsInterfaces => {
-  return { type: UserActionTypes.USER_LOGIN_ERROR_RESET };
+  return { type: UserActionTypes.USER_LOGIN_RESET };
 };
 
 export const userLogout = (): UserActionsInterfaces => {
