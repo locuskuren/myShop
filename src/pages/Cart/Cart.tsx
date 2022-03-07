@@ -158,7 +158,10 @@ const Cart: React.FC = () => {
             <button
               className="checkout-button"
               disabled={
-                token === undefined || cart?.totalPrice === 0 || KEY === ''
+                token === undefined ||
+                cart?.totalPrice === 0 ||
+                KEY === '' ||
+                !userId
               }
             >
               Check out
