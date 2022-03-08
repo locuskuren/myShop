@@ -12,10 +12,12 @@ const Login: React.FC = () => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    setUsername('');
-    setPassword('');
-    setMessage('');
-    userLoginErrorReset();
+    return () => {
+      setUsername('');
+      setPassword('');
+      setMessage('');
+      userLoginErrorReset();
+    };
   }, [userLoginErrorReset]);
 
   useEffect(() => {
