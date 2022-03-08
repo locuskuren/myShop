@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     setPassword('');
     setMessage('');
     userLoginErrorReset();
-  }, []);
+  }, [userLoginErrorReset]);
 
   useEffect(() => {
     if (currentUser) {
