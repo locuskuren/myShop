@@ -4,5 +4,5 @@ const BASE_URL = 'https://myshop-backend.herokuapp.com/api';
 
 export const myShopApi = axios.create({
   baseURL: BASE_URL,
-  timeout: 10000,
+  timeout: 30000,
 });
