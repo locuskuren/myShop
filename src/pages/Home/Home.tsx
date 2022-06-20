@@ -1,8 +1,22 @@
+import { useEffect } from 'react';
+import { useActions } from '../../hooks/useActions';
+import { useSelector } from '../../hooks/useTypedSelector';
 import ProductsList from '../../components/ProductsList/ProductsList';
 
 import './Home.scss';
 
 const Home: React.FC = () => {
+  const { fetchProducts, productsReset } = useActions();
+  const { products, loading, error } = useSelector((state) => state.products);
+
+  useEffect(() => {
+    fetchProducts();
+
+    return () => {
+      productsReset();
+    };
+  }, [fetchProducts, productsReset]);
+
   return (
     <div className="homepage">
       <div className="promo" id="#top">
@@ -20,19 +34,39 @@ const Home: React.FC = () => {
         <div id="menscover" className="gap-image">
           <span>MEN'S FASHION</span>
         </div>
-        <ProductsList category="menswear" />
+        <ProductsList
+          products={products}
+          error={error}
+          loading={loading}
+          category="menswear"
+        />
         <div id="womenscover" className="gap-image">
           <span>WOMEN'S FASHION</span>
         </div>
-        <ProductsList category="womenswear" />
+        <ProductsList
+          products={products}
+          error={error}
+          loading={loading}
+          category="womenswear"
+        />
         <div id="electronicscover" className="gap-image">
           <span>ELECTRONICS</span>
         </div>
-        <ProductsList category="electronics" />
+        <ProductsList
+          products={products}
+          error={error}
+          loading={loading}
+          category="electronics"
+        />
         <div id="jewelerycover" className="gap-image">
           <span>JEWELERY</span>
         </div>
-        <ProductsList category="jewelery" />
+        <ProductsList
+          products={products}
+          error={error}
+          loading={loading}
+          category="jewelery"
+        />
       </div>
     </div>
   );

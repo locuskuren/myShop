@@ -51,7 +51,7 @@ const Cart: React.FC = () => {
 
           const dataToSend = {
             products,
-            amount: cart.totalPrice,
+            amount: cart.totalPrice + 7.99,
             address: 'n/a',
             userId,
           };
@@ -150,7 +150,7 @@ const Cart: React.FC = () => {
             image="https://i.ibb.co/bBnHDL3/logo512.png"
             billingAddress
             shippingAddress
-            description={`Your total is $${cart?.totalPrice}`}
+            description={`Your total is $${cart?.totalPrice + 7.99}`}
             amount={amount}
             token={onToken}
             stripeKey={KEY}

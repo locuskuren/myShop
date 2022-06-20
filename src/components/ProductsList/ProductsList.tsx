@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Product } from '../../api-data-interfaces';
 
 import { useActions } from '../../hooks/useActions';
 import { useSelector } from '../../hooks/useTypedSelector';
@@ -9,20 +10,17 @@ import './ProductsList.scss';
 
 type Props = {
   category: string;
+  loading: boolean;
+  error: boolean;
+  products: Product[] | null;
 };
 
-const ProductsList: React.FC<Props> = ({ category }) => {
-  const { fetchProducts, productsReset } = useActions();
-  const { products, loading, error } = useSelector((state) => state.products);
-
-  useEffect(() => {
-    fetchProducts();
-
-    return () => {
-      productsReset();
-    };
-  }, [fetchProducts, productsReset]);
-
+const ProductsList: React.FC<Props> = ({
+  category,
+  loading,
+  error,
+  products,
+}) => {
   return (
     <div className="product-list" id={`${category}`}>
       {loading && <LoadingSpinner />}

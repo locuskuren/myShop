@@ -42,26 +42,28 @@ const Profile: React.FC = () => {
         {error && (
           <span>Unexpected error, please refresh or contact admin</span>
         )}
-        <table>
-          <thead>
-            <tr>
-              <th>ORDER ID</th>
-              <th>DATE</th>
-              <th>PAID</th>
-              <th>STATUS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {orders.map((order) => (
-              <tr key={order._id}>
-                <td>{order._id.slice(0, 10)}...</td>
-                <td>{moment(order.createdAt).format('DD/MMM/YYYY hh:mm')}</td>
-                <td>${order.amount}</td>
-                <td>{order.status}</td>
+        {orders.length !== 0 && (
+          <table>
+            <thead>
+              <tr>
+                <th>ORDER ID</th>
+                <th>DATE</th>
+                <th>PAID</th>
+                <th>STATUS</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr key={order._id}>
+                  <td>{order._id.slice(0, 10)}...</td>
+                  <td>{moment(order.createdAt).format('DD/MMM/YYYY hh:mm')}</td>
+                  <td>${order.amount}</td>
+                  <td>{order.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
