@@ -61,11 +61,12 @@ const Register = () => {
 
   return (
     <div className="form-wrapper">
-      <h1 className="register-title">Create Account</h1>
+      <h1>Create Account</h1>
       <form onSubmit={handleSubmit}>
         <input
           placeholder="username"
           type="text"
+          value={username}
           onChange={(e) => setUsername(e.target.value.toLowerCase())}
         />
         <input
@@ -93,8 +94,8 @@ const Register = () => {
           {loading ? 'Loading...' : 'Create'}
         </button>
       </form>
-      <Link to="/register">
-        <span className="link">Create Account</span>
+      <Link to="/login">
+        <span className="link">Have an account</span>
       </Link>
     </div>
   );
