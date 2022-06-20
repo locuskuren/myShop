@@ -16,7 +16,7 @@ interface UserLoginFail {
 }
 
 interface UserLoginErrorReset {
-  type: UserActionTypes.USER_LOGIN_ERROR_RESET;
+  type: UserActionTypes.USER_ERROR_RESET;
 }
 
 interface UserLogout {
@@ -29,7 +29,6 @@ interface UserRegisterRequest {
 
 interface UserRegisterSucess {
   type: UserActionTypes.USER_REGISTER_SUCCESS;
-  payload: User;
 }
 
 interface UserRegisterFail {

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
+import validator from 'validator';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -9,23 +10,23 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
-  const { loading, error, currentUser } = useSelector(
-    (state) => state.userRegister
-  );
-  const { userRegister, userRegisterReset } = useActions();
+  const { loading, error, currentUser } = useSelector((state) => state.user);
+  const { userRegister, userErrorReset } = useActions();
   let navigate = useNavigate();
 
   useEffect(() => {
     return () => {
-      userRegisterReset();
+      userErrorReset();
     };
-  }, [userRegisterReset]);
+  }, [userErrorReset]);
 
   useEffect(() => {
     if (currentUser) {
       navigate('/');
     }
   }, [currentUser, navigate]);
+
+  console.log(validator.isEmail(email));
 
   const validate = (): boolean => {
     if (username === '') {
@@ -34,6 +35,10 @@ const Register = () => {
     }
     if (email === '') {
       setMessage("email can't be empty");
+      return false;
+    }
+    if (!validator.isEmail(email)) {
+      setMessage(`email should be formated as "johndoe@gmail.com"`);
       return false;
     }
     if (password === '') {
@@ -51,12 +56,6 @@ const Register = () => {
     event.preventDefault();
     if (validate()) {
       userRegister(username, password, email);
-      if (currentUser) {
-        setUsername('');
-        setPassword('');
-        setConfirmPassword('');
-        setEmail('');
-      }
     }
   };
 

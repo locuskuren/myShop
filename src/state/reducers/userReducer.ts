@@ -32,37 +32,25 @@ export const userReducer: Reducer<UserState, UserActionsInterfaces> = produce(
         state.loading = false;
         state.error = action.payload;
         return state;
-      case UserActionTypes.USER_LOGIN_ERROR_RESET:
+      case UserActionTypes.USER_ERROR_RESET:
         state.error = '';
         state.loading = false;
         return state;
       case UserActionTypes.USER_LOGOUT:
         state = initialState;
         return state;
-      default:
-        return state;
-    }
-  }
-);
-
-export const userRegisterReducer: Reducer<UserState, UserActionsInterfaces> =
-  produce((state: UserState = initialState, action: UserActionsInterfaces) => {
-    switch (action.type) {
       case UserActionTypes.USER_REGISTER_REQUEST:
         state.loading = true;
         return state;
       case UserActionTypes.USER_REGISTER_SUCCESS:
         state.loading = false;
-        state.currentUser = action.payload;
         return state;
       case UserActionTypes.USER_REGISTER_FAIL:
         state.loading = false;
         state.error = action.payload;
         return state;
-      case UserActionTypes.USER_REGISTER_RESET:
-        state = initialState;
-        return state;
       default:
         return state;
     }
-  });
+  }
+);

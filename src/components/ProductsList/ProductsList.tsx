@@ -1,8 +1,5 @@
-import { useEffect } from 'react';
 import { Product } from '../../api-data-interfaces';
 
-import { useActions } from '../../hooks/useActions';
-import { useSelector } from '../../hooks/useTypedSelector';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import ProductPreview from '../ProductPreview/ProductPreview';
 
@@ -26,7 +23,7 @@ const ProductsList: React.FC<Props> = ({
       {loading && <LoadingSpinner />}
       {error && (
         <div className="error">
-          Unexepcted error, please refresh or contact administrator
+          Unexpected error, please refresh or contact administrator
         </div>
       )}
       <div className="product-list-scroll">

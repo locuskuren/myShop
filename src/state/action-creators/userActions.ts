@@ -23,8 +23,8 @@ export const userLogin = (username: string, password: string) => {
   };
 };
 
-export const userLoginErrorReset = (): UserActionsInterfaces => {
-  return { type: UserActionTypes.USER_LOGIN_ERROR_RESET };
+export const userErrorReset = (): UserActionsInterfaces => {
+  return { type: UserActionTypes.USER_ERROR_RESET };
 };
 
 export const userLogout = (): UserActionsInterfaces => {
@@ -42,22 +42,27 @@ export const userRegister = (
     dispatch({ type: UserActionTypes.USER_REGISTER_REQUEST });
 
     try {
-      const { data } = await myShopApi.post<User>('auth/register', {
+      await myShopApi.post('auth/register', {
         username,
         password,
         email,
       });
 
-      dispatch({ type: UserActionTypes.USER_REGISTER_SUCCESS, payload: data });
+      dispatch({ type: UserActionTypes.USER_REGISTER_SUCCESS });
 
-      dispatch({ type: UserActionTypes.USER_REGISTER_RESET });
+      const { data } = await myShopApi.post<User>('/auth/login', {
+        username,
+        password,
+      });
+
+      dispatch({ type: UserActionTypes.USER_LOGIN_SUCCESS, payload: data });
     } catch (err: any) {
-      let message: string = 'unknown error, please try again or contact admin';
-      if (err.response.data.keyValue.userName) {
-        message = `user with username ${err.response.data.keyValue.userName} already exists`;
+      let message = 'unknown error, please try again or contact admin';
+      if (err.response.data.keyValue.username) {
+        message = `user with username ${err.response.data.keyValue.username} already exists`;
       }
       if (err.response.data.keyValue.email) {
-        message = `user with username ${err.response.data.keyValue.email} already exists`;
+        message = `email adress ${err.response.data.keyValue.email} is already in use`;
       }
 
       dispatch({
@@ -66,8 +71,4 @@ export const userRegister = (
       });
     }
   };
-};
-
-export const userRegisterReset = (): UserActionsInterfaces => {
-  return { type: UserActionTypes.USER_REGISTER_RESET };
 };

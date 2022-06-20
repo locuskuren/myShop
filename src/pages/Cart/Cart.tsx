@@ -68,7 +68,6 @@ const Cart: React.FC = () => {
         } catch (err) {
           setError(true);
           setStripeToken('');
-          console.log(err);
         }
       };
       request();
