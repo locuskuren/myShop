@@ -39,10 +39,6 @@ const Login: React.FC = () => {
     event.preventDefault();
     if (validate()) {
       userLogin(username, password);
-      if (currentUser) {
-        setUsername('');
-        setPassword('');
-      }
     }
   };
 
