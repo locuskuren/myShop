@@ -7,12 +7,17 @@
 Typescript
 - React
 - Redux
+- Redux Thunk
 - Stripe
+- Axios
+- Immer
+- React Router
+- Sass
 
 ## Brief Description:
 
 Simple eCommerce platform on which you can:
  - authenticate
-  - browse through different products and add them to the cart
-  - check out your and pay with stripe test card and then view the order list on the profile page
+ - browse through different products and add them to the cart
+ - check out your and pay with stripe test card and then view the order list on the profile page
 
