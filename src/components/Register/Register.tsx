@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from '../../hooks/useTypedSelector';
 import { useActions } from '../../hooks/useActions';
 import validator from 'validator';
@@ -93,6 +93,9 @@ const Register = () => {
           {loading ? 'Loading...' : 'Create'}
         </button>
       </form>
+      <Link to="/register">
+        <span className="link">Create Account</span>
+      </Link>
     </div>
   );
 };
