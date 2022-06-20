@@ -1,13 +1,8 @@
-import { useEffect } from 'react';
 import ProductsList from '../../components/ProductsList/ProductsList';
 
 import './Home.scss';
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="homepage">
       <div className="promo" id="#top">

@@ -6,7 +6,6 @@ import './Auth.scss';
 
 const Auth = () => {
   const pathname = window.location.pathname;
-  console.log(pathname);
 
   useEffect(() => {
     window.scrollTo(0, 0);

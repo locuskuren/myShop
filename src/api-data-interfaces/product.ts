@@ -2,8 +2,8 @@ export interface Product {
   _id: string;
   title: string;
   price: number;
-  description: string;
+  desc: string;
   category: string;
-  image: string;
+  img: string;
   inStock: boolean;
 }
