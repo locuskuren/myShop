@@ -4,7 +4,7 @@
 
 ## Built with:
 
-Typescript
+- Typescript
 - React
 - Redux
 - Redux Thunk
