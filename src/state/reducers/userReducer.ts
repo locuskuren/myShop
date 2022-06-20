@@ -34,6 +34,7 @@ export const userReducer: Reducer<UserState, UserActionsInterfaces> = produce(
         return state;
       case UserActionTypes.USER_LOGIN_ERROR_RESET:
         state.error = '';
+        state.loading = false;
         return state;
       case UserActionTypes.USER_LOGOUT:
         state = initialState;
