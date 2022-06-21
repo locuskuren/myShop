@@ -21,3 +21,6 @@ Simple eCommerce platform on which you can:
  - browse through different products and add them to the cart
  - check out your and pay with stripe test card and then view the order list on the profile page
 
+### Backend
+- Backend for this app hasn't been uploaded to this repo, as it was found online
+
